@@ -1,0 +1,21 @@
+pipelines:
+  - name: todolist-ci
+    kind: CI
+    source: REMOTE
+    mode: MULTIPLE
+    triggerBranch: main|develop|dev|feature/.+|feat/.+|hotfix/.+
+    triggerTag: ""
+    jenkinsfilePath: todolist/todolist-ci/Jenkinsfile
+    pipelineConfigPath: todolist/todolist-ci/config.yaml
+    appRepo: https://github.com/TrongDuong2706/todo-list-app.git
+    webhookEnabled: true
+  - name: todolist-cd
+    kind: CD
+    source: REMOTE
+    mode: MULTIPLE
+    triggerBranch: main
+    remoteTriggerOnly: true
+    triggerTag: v.*
+    jenkinsfilePath: todolist/todolist-cd/Jenkinsfile
+    pipelineConfigPath: todolist/todolist-cd/config.yaml
+    appRepo: https://github.com/TrongDuong2706/todo-list-app.git

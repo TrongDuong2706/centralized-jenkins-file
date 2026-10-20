@@ -1,0 +1,19 @@
+@Library('shared-library@main') _
+
+node('built-in') {
+    stage('Checkout Centralized Repo') {
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: '*/main']],
+            extensions: [],
+            userRemoteConfigs: [[
+                url: 'https://gitea.devops.osswave.kr/jenkins/centralized-jenkins-files.git',
+                credentialsId: 'gitea-all'
+            ]]
+        ])
+    }
+
+    def config = readYaml file: 'todolist/todolist-cd/config.yaml'
+    def pipelineTemplate = load 'shared/cd-vuejs-template.Jenkinsfile'
+    pipelineTemplate.call(config)
+}

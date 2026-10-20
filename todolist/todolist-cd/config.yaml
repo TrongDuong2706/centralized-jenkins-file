@@ -1,0 +1,13 @@
+appRepo: https://github.com/TrongDuong2706/todo-list-app.git
+appBranch: main
+composeFile: compose.yaml
+image: duongtrong27/jenkins-shared-library-todolist-frontend
+imageTag: latest
+registry: docker.io
+# Leave this empty for a public Docker Hub repository. For a private one, use dockerhub-duongtrong27.
+registryCredentialsId: ''
+deployHost: 192.168.94.131
+deployPort: 22
+deployDirectory: /opt/todolist
+service: frontend
+sshCredentialsId: todolist-deploy-ssh

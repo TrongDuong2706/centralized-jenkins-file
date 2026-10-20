@@ -1,0 +1,7 @@
+appRepo: https://github.com/TrongDuong2706/todo-list-app.git
+appBranch: main
+buildContext: frontend
+image: duongtrong27/jenkins-shared-library-todolist-frontend
+imageTag: latest
+registry: docker.io
+registryCredentialsId: dockerhub-duongtrong27
