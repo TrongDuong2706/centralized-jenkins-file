@@ -48,3 +48,7 @@ private void requireValue(Map config, String key) {
         error "Vue CI configuration requires '${key}'."
     }
 }
+
+// `load` returns the result of this script. Return the script instance so the
+// caller can invoke its `call(config)` method.
+return this
