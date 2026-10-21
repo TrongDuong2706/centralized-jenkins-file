@@ -7,8 +7,7 @@ node('built-in') {
             branches: [[name: '*/main']],
             extensions: [],
             userRemoteConfigs: [[
-                url: 'https://gitea.devops.osswave.kr/jenkins/centralized-jenkins-files.git',
-                credentialsId: 'gitea-all'
+                url: 'https://github.com/TrongDuong2706/centralized-jenkins-file.git'
             ]]
         ])
     }
