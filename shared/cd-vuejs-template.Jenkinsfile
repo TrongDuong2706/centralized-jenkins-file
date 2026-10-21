@@ -32,6 +32,7 @@ def call(Map config = [:]) {
                 image: imageRef,
                 composeFile: (config.composeFile ?: 'docker-compose.yml').toString(),
                 deployDirectory: (config.deployDirectory ?: '/opt/todolist').toString(),
+                composeProjectName: config.composeProjectName?.toString(),
                 service: (config.service ?: 'frontend').toString(),
                 registry: (config.registry ?: 'docker.io').toString(),
                 registryCredentialsId: config.registryCredentialsId?.toString()

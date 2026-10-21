@@ -9,5 +9,6 @@ registryCredentialsId: ''
 deployHost: 192.168.94.131
 deployPort: 22
 deployDirectory: /opt/todolist
+composeProjectName: todo-list-app
 service: frontend
 sshCredentialsId: todolist-deploy-ssh
