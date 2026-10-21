@@ -1,5 +1,7 @@
+folder: todolist
+
 pipelines:
-  - name: todolist-ci
+  - name: ci
     kind: CI
     source: REMOTE
     mode: MULTIPLE
@@ -9,7 +11,7 @@ pipelines:
     pipelineConfigPath: todolist/todolist-ci/config.yaml
     appRepo: https://github.com/TrongDuong2706/todo-list-app.git
     webhookEnabled: true
-  - name: todolist-cd
+  - name: cd
     kind: CD
     source: REMOTE
     mode: MULTIPLE
